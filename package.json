@@ -1,0 +1,55 @@
+{
+  "name": "fleets",
+  "version": "0.2.0",
+  "description": "Fleets — Bloomberg-style multi-site GA4 + Cloudflare + GSC terminal CLI + MCP server",
+  "mcpName": "io.github.yoanndefay/fleets-cli",
+  "type": "module",
+  "bin": {
+    "fleets": "./bin/fleets.js",
+    "fleets-mcp": "./bin/fleets-mcp.js"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "clean": "rm -rf dist",
+    "dev": "tsx src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run clean && npm run build"
+  },
+  "files": [
+    "bin",
+    "dist",
+    "README.md"
+  ],
+  "keywords": [
+    "analytics",
+    "ga4",
+    "cli",
+    "cloudflare",
+    "search-console",
+    "terminal",
+    "mcp",
+    "model-context-protocol"
+  ],
+  "license": "MIT",
+  "author": "Yoann Defay",
+  "homepage": "https://fleets.run",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoanndefay/fleets-cli.git"
+  },
+  "bugs": "https://github.com/yoanndefay/fleets-cli/issues",
+  "engines": {
+    "node": ">=22"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "tsx": "^4",
+    "typescript": "^5",
+    "vitest": "^2"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.29.0",
+    "zod": "^3.25.76"
+  }
+}
