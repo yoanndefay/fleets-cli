@@ -216,7 +216,10 @@ describe("cmdEvents", () => {
 
 describe("cmdUsers", () => {
   it("calls /api/ga?view=users", async () => {
-    const fetchMock = stubFetch([SITE], {});
+    const fetchMock = stubFetch([SITE], [
+      { country: "US", device: "desktop", users: 10, sessions: 12, engagementRate: 0.5 },
+      { country: "FR", device: "mobile", users: 4, sessions: 5, engagementRate: 0.4 },
+    ]);
     vi.stubGlobal("fetch", fetchMock);
     await captureStdout(() => cmdUsers(["my-blog"], {}));
     const gaUrl = String(fetchMock.mock.calls.find(([url]) => String(url).includes("/api/ga"))![0]);
@@ -311,7 +314,17 @@ describe("cmdInsights", () => {
 
 describe("cmdSpeed", () => {
   it("calls /api/psi with domain and strategy", async () => {
-    const fetchMock = stubFetch([SITE], {});
+    const fetchMock = stubFetch([SITE], {
+      url: "https://my-blog.com",
+      strategy: "mobile",
+      fetchTime: "2026-06-26T15:29:00Z",
+      scores: { performance: 90, accessibility: 95, bestPractices: 88, seo: 100 },
+      cwv: [
+        { id: "lcp", label: "LCP", displayValue: "1.2 s", numericValue: 1200, category: "FAST" },
+      ],
+      auditPassed: 20,
+      auditFailed: 3,
+    });
     vi.stubGlobal("fetch", fetchMock);
     await captureStdout(() => cmdSpeed(["my-blog"], { strategy: "mobile" }));
     const psiUrl = String(fetchMock.mock.calls.find(([url]) => String(url).includes("/api/psi"))![0]);
