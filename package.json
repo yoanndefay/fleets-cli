@@ -1,8 +1,8 @@
 {
   "name": "fleets",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Fleets — Bloomberg-style multi-site GA4 + Cloudflare + GSC terminal CLI + MCP server",
-  "mcpName": "io.github.yoanndefay/fleets-cli",
+  "mcpName": "io.github.runfleets/cli",
   "type": "module",
   "bin": {
     "fleets": "./bin/fleets.js",
@@ -36,9 +36,9 @@
   "homepage": "https://fleets.run",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/yoanndefay/fleets-cli.git"
+    "url": "git+https://github.com/runFleets/cli.git"
   },
-  "bugs": "https://github.com/yoanndefay/fleets-cli/issues",
+  "bugs": "https://github.com/runFleets/cli/issues",
   "engines": {
     "node": ">=22"
   },
