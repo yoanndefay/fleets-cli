@@ -116,7 +116,7 @@ No global install? Use `npx`:
   "mcpServers": {
     "fleets": {
       "command": "npx",
-      "args": ["-y", "fleets", "fleets-mcp"]
+      "args": ["-y", "-p", "fleets", "fleets-mcp"]
     }
   }
 }
