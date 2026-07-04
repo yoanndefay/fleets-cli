@@ -1,8 +1,8 @@
 {
   "name": "fleets-mcp",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "MCP server for Fleets — multi-site GA4, Search Console, Cloudflare & PageSpeed analytics exposed as tools",
-  "mcpName": "io.github.runfleets/cli",
+  "mcpName": "io.github.runFleets/cli",
   "type": "module",
   "bin": {
     "fleets-mcp": "./index.js"

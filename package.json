@@ -2,7 +2,7 @@
   "name": "fleets",
   "version": "0.2.1",
   "description": "Fleets — Bloomberg-style multi-site GA4 + Cloudflare + GSC terminal CLI + MCP server",
-  "mcpName": "io.github.runfleets/cli",
+  "mcpName": "io.github.runFleets/cli",
   "type": "module",
   "bin": {
     "fleets": "./bin/fleets.js",
